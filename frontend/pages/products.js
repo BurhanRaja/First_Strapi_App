@@ -1,27 +1,34 @@
+import Link from 'next/link'
 import React from 'react'
 
 const Products = (props) => {
     return (
-        <div className='container m-auto'>
+        <div className='container mx-auto'>
             <section class="text-gray-600 body-font">
-                <div class="container px-5 py-16 mx-auto">
-                    <div class="lg:w-1/2 w-full mb-6">
+                <div class="container px-5 lg:py-16 mx-auto">
+                    <div class="lg:w-1/2 w-full mb-10">
                         <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">Product List - MyShop</h1>
                         <div class="h-1 w-20 bg-indigo-500 rounded"></div>
                     </div>
                     <div class="flex flex-wrap -m-4">
+
                         {props.products.data.map((item) => {
-                            return <div class="lg:w-1/4 md:w-1/2 p-4 w-full hover:bg-slate-100 hover:cursor-pointer">
-                                <a class="block relative h-48 rounded overflow-hidden hover:cursor-pointer">
+                            return <div class="lg:w-72 md:w-1/2 p-1 w-auto bg-gray-100 hover:bg-slate-50 my-2 mx-3">
+                                <Link href={`/product/${item.attributes.slug}`}>
+                                <a class="block relative lg:h-auto  rounded overflow-hidden hover:cursor-pointer">
                                     <img alt="ecommerce" class="object-cover object-center w-full h-full block" src={`${item.attributes.image.data && item.attributes.image.data.attributes.name}`} />
                                 </a>
-                                <div class="mt-4">
+                                </Link>
+                                <div class="mt-4 px-10 py-2">
                                     <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">{item.attributes.category}</h3>
-                                    <h2 class="text-gray-900 title-font text-lg font-medium hover:text-slate-700 hover:cursor-pointer">{item.attributes.title}</h2>
+                                    <Link href={`/product/${item.attributes.slug}`}>
+                                    <h2 class="text-gray-900 title-font text-lg font-medium hover:text-yellow-400 hover:cursor-pointer">{item.attributes.title}</h2>
+                                    </Link>
                                     <p class="mt-1">${item.attributes.price}</p>
                                 </div>
                             </div>
                         })}
+
                     </div>
                 </div>
             </section>
