@@ -1,0 +1,12 @@
+@media only screen and (max-width: 1280px) and (min-width: 1026px) {
+    .product-page-btn{
+        flex-direction: column;
+    }
+}   
+
+@media only screen and (max-width: 400px){
+    .product-page-btn{
+        flex-direction: column;
+    }
+}   
+
