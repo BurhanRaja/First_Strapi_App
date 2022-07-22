@@ -6,7 +6,7 @@ const Slug = ({product, addToCart}) => {
   const { slug } = router.query
 
   const handleBuyNow = () => {
-    addToCart(product.title, 1, product.price)
+    addToCart(product.title, 1, product.price, product.image.data.attributes.name)
     router.push('/cart')
   }
 
@@ -65,7 +65,7 @@ const Slug = ({product, addToCart}) => {
             <span className="title-font font-medium text-2xl text-gray-900">₹{product.price}</span>
 
             <div className='product-page-btn flex ml-auto lg:flex-row'>
-            <button onClick={() => {addToCart(product.title, 1, product.price)}} className="flex items-center text-white bg-indigo-500 border-0 py-2 lg:px-6 px-3 focus:outline-none hover:bg-yellow-500 rounded sm:text-sm mb-2">Add to Card</button>
+            <button onClick={() => {addToCart(product.title, 1, product.price, product.image.data.attributes.name)}} className="flex items-center text-white bg-indigo-500 border-0 py-2 lg:px-6 px-3 focus:outline-none hover:bg-yellow-500 rounded sm:text-sm mb-2">Add to Card</button>
 
             <button onClick={handleBuyNow} className="flex items-center text-white ml-3 bg-indigo-500 border-0 py-2 lg:px-6 px-3 focus:outline-none hover:bg-green-500 rounded sm:text-sm mb-2">Buy Now</button>
             </div>

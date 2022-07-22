@@ -8,15 +8,16 @@ function MyApp({ Component, pageProps }) {
   const [cart, setCart] = useState([])
   const [reloadKey, setReloadKey] = useState(1)
 
-  const addToCart = (item, qty, price) => {
+  const addToCart = (item, qty, price, image) => {
     let newCart = cart;
     for (let index = 0; index < qty; index++) {
-      newCart.push([item, price])
+      newCart.push([item, price, image])
     }
     console.log(newCart)
     setCart(newCart)
     setReloadKey(Math.random())
   }
+  
   const removeItemCart = (item, qty) => {
     let newCart = cart
     let indexOfItem = newCart.indexOf(item)
