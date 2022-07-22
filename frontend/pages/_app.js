@@ -2,6 +2,7 @@ import Navbar from '../components/Navbar'
 import '../styles/globals.css'
 import '../css/Slug.css'
 import { useState, useEffect } from 'react'
+import Footer from '../components/Footer'
 
 function MyApp({ Component, pageProps }) {
   const [cart, setCart] = useState([])
@@ -33,6 +34,7 @@ function MyApp({ Component, pageProps }) {
   return <div>
             <Navbar key={reloadKey} cart={cart} />
             <Component cart={cart} addToCart={addToCart} removeAllCart={removeAllCart} removeItemCart={removeItemCart} {...pageProps} />
+            <Footer />
         </div>
 }
 
