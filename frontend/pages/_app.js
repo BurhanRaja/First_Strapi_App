@@ -3,8 +3,12 @@ import '../styles/globals.css'
 import '../css/Slug.css'
 import { useState, useEffect } from 'react'
 import Footer from '../components/Footer'
+import { Head } from 'next/document'
 
 function MyApp({ Component, pageProps }) {
+  <Head>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0"/>
+  </Head>
   const [cart, setCart] = useState([])
   const [reloadKey, setReloadKey] = useState(1)
 

@@ -45,7 +45,7 @@ export async function getServerSideProps(context) {
         method: 'GET',
         headers: {
             'Content-Type': "application/json",
-            "Authorization": "Bearer 00af1c937ad0ade794936f4814eadc38ad18f68fa7f4df34bea52d85ae94b2ea1bb288858cbe4c75a6692825ff82668931c2dd21440fecad12a2f65399fd2bda2b7a1e8ec1b9ed4d908ab77b026e4f2aada1cf46cba81e61d80e39615b92f79276ef5da032554c02eefba2d8bcf1c16a6849d3887d2a398b016f6cc0d052ec33"
+            "Authorization": `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`
         }
     });
 
